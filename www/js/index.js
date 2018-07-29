@@ -1,4 +1,4 @@
-const api = "http://localhost:3030/api";
+const api = "https://notary.crypto.uz/api";
 
 const notarizeSubmitBtn = document.getElementById("notarizeSubmitBtn");
 notarizeSubmitBtn.addEventListener("click", function (e) {

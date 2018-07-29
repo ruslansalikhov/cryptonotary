@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/crypto-js/crypto-js.js"></script>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    <title>Crypto Notary : Timestamping</title>
+</head>
+<body>
+
+<br>
+
+<div class="container">
+    <h2>Crypto Notary : TIMESTAMPING</h2>
+    <p>powered by <a href="https://golos.io">Golos</a></p>
+    <br>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#notarize">Notarize</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#verify">Verify</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div id="notarize" class="container tab-pane active"><br>
+            <h3>Notarize</h3>
+
+            <form id="formNotarize">
+                <div class="form-group row">
+                    <label for="inputNotarizeName" class="col-sm-2 col-form-label">Document Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputNotarizeName" placeholder="Document Name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        Enter file hash manually or select file (your file will not be uploaded):
+                        <input type="file" class="form-control" id="inputNotarizeFile" placeholder=" SHA-256 Hash">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputNotarizeHash" class="col-sm-2 col-form-label">Hash (SHA-256)</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputNotarizeHash" placeholder=" SHA-256 Hash">
+                    </div>
+                </div>
+
+                <div class="g-recaptcha" data-sitekey="6LfJ92YUAAAAALyqVW0bc4VG2H7eG3cFjtLotyqq"></div>
+
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <button type="submit" id="notarizeSubmitBtn" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+
+            <div id="resultNotarize"></div>
+
+        </div>
+        <div id="verify" class="container tab-pane fade"><br>
+            <h3>Verify</h3>
+
+            <form>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        Enter file hash manually or select file (your file will not be uploaded):
+                        <input type="file" class="form-control" id="inputVerifyFile" placeholder=" SHA-256 Hash">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputVerifyHash" class="col-sm-2 col-form-label">Hash (SHA-256)</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputVerifyHash" placeholder=" SHA-256 Hash">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <button type="submit" id="verifySubmitBtn" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+
+            <div id="resultVerify"></div>
+        </div>
+    </div>
+</div>
+
+<script src="js/hashing.js"></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>

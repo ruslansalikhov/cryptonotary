@@ -1,0 +1,13 @@
+{
+  "api": {
+    "host": "0.0.0.0",
+    "port": 8000
+  },
+  "recaptcha": {
+    "site_key": "",
+    "secret_key": ""
+  },
+  "rpc_node": "https://api.golos.blckchnd.com",
+  "account": "notary",
+  "posting_key": ""
+}
